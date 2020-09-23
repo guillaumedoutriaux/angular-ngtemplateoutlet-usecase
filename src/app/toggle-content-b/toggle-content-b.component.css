@@ -1,0 +1,17 @@
+.picture-content {
+  display: flex;
+}
+
+.picture-content__media {
+  object-fit: cover;
+  flex:0 0 100px;
+}
+
+.picture-content__media  img{
+  height: 100px;
+  width: 100%;
+}
+
+.picture-content__text {
+  margin-left: 15px;
+}

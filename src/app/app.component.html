@@ -1,0 +1,42 @@
+<h3>Component projection with <em>NgTemplateOutlet</em></h3>
+<p>Always prefer NgTemplateOutlet over ng-content when you need to project components. If you use ng-content for this :
+</p>
+<ul>
+	<li>it breaks lifecycle hooks</li>
+	<li>It can cause memory leaks</li>
+</ul>
+
+<p>NgTemplateOutlet give you the opportunity :</p>
+<ul>
+  <li>to share logic between components</li>
+  <li>to maintain a separation of concerns</li>
+  <li>to access to the child component variable from the parent</li>
+</ul>
+
+<!-- projected component with text -->
+<app-toggle>
+  <ng-template #toggleHeader>
+    <!-- the header is an inline templates but it could be another projected component -->
+    📝 Toggle - text
+  </ng-template>
+  <ng-template #toggleContent>
+    <app-toggle-content-a [datas]="(texts$|async)"></app-toggle-content-a>
+  </ng-template>
+</app-toggle>
+
+<br>
+
+<!-- projected component with pictures -->
+<app-toggle >
+  <ng-template #toggleHeader>
+    🖼 Toggle - picture
+  </ng-template>
+  <ng-template #toggleContent>
+    <app-toggle-content-b [datas]="(picture$|async)"></app-toggle-content-b>
+  </ng-template>
+</app-toggle>
+
+<br>
+
+<!-- empty one to display placeholders -->
+<app-toggle></app-toggle>

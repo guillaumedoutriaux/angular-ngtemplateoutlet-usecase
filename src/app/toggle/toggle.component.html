@@ -1,0 +1,17 @@
+<div class="toggle" [class.isActive]="isPanelActive">
+
+  <!-- default -->
+	<ng-template #defaultToggleContent> Sorry, there is no content to display... 🎈</ng-template>
+  
+  <!-- Header -->
+	<div class="toggle__header" type="button" (click)="togglePanel()">
+    <ng-container [ngTemplateOutlet]="toggleHeaderRef || defaultToggleContent"></ng-container>
+    <span class="toggle__direction">▶</span>
+  </div>
+
+  <!-- Content -->
+	<div class="toggle__body" >
+		<ng-container [ngTemplateOutlet]="toggleContentRef || defaultToggleContent"></ng-container>
+	</div>
+
+</div>

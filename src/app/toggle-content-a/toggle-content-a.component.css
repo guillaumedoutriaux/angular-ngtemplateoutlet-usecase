@@ -1,0 +1,8 @@
+.text-content {
+  display:flex;
+  justify-content: space-between;
+}
+.text-content__primary,
+.text-content__secondary {
+  flex: 0 0 45%;
+}
